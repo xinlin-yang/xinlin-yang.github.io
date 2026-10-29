@@ -1,0 +1,4 @@
+<section class="research-lab" aria-label="{{ .Get "name" }}">
+  <h3 class="lab-heading"><a href="{{ .Get "url" }}">{{ .Get "name" }}</a><span class="lab-institution">, {{ .Get "institution" }}</span></h3>
+  <div class="lab-positions">{{ .Inner | .Page.RenderString }}</div>
+</section>

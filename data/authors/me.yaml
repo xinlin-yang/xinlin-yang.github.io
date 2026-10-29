@@ -1,0 +1,28 @@
+# Central personal-profile record. Replace only with owner-approved public information.
+# Empty URLs deliberately avoid publishing fictitious email, Scholar or ORCID accounts.
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: 'Xinlin Yang'
+  alternate: '杨昕霖'
+role: ''
+bio: ''
+affiliations: []
+
+# Project-specific photo metadata for the Home profile component in stage three.
+# Example future path: media/authors/me.jpg, after an approved photo is supplied.
+photo:
+  path: 'media/authors/me.png'
+  alt: 'Portrait of Xinlin Yang'
+
+links:
+  - icon: at-symbol
+    label: xinlin-yang[at]outlook[dot]com
+    url: ''
+  - icon: academicons/google-scholar
+    label: Google Scholar
+    url: 'https://scholar.google.com/citations?hl=en&user=fWmX4iQAAAAJ'
+  - icon: academicons/orcid
+    label: ORCID
+    url: 'https://orcid.org/0009-0008-6647-6542'

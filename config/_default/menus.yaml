@@ -1,0 +1,11 @@
+# Canonical content references keep navigation tied to the actual Hugo page routes.
+main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Publications
+    pageRef: /publications
+    weight: 20
+  - name: About
+    pageRef: /about
+    weight: 30

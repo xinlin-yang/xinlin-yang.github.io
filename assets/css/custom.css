@@ -1,0 +1,96 @@
+@font-face{font-family:"Xinlin Name Fangsong";src:url("../fonts/xinlin-name-fangsong-400.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;unicode-range:U+6615,U+6768,U+9716}
+@font-face{font-family:Inter;src:url("../fonts/inter-latin.woff2") format("woff2");font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:Lora;src:url("../fonts/lora-latin.woff2") format("woff2");font-style:normal;font-weight:400 600;font-display:swap}
+:root{
+ --academic-bg:#f9f8f5;--academic-ink:#302f2b;--academic-muted:#66685c;--academic-line:#e7e4de;--academic-underline:#c2c3b7;
+ --academic-serif:Lora,Georgia,serif;--academic-sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+ --text-body:16px;--text-small:14px;--text-entry:18px;--text-section:22px;--text-page:36px;--text-name:26px;
+ --academic-document:820px;--academic-home:1060px;
+ --space-section:76px;--space-entry:28px;--space-lab:34px;--space-role:18px;
+ --hb-color-background:var(--academic-bg);--hb-color-foreground:var(--academic-ink)
+}
+*{box-sizing:border-box}
+html,body{background:var(--academic-bg)!important;color:var(--academic-ink)!important}
+html{scroll-padding-top:24px}
+body{font-family:var(--academic-sans);font-size:var(--text-body);line-height:1.8;min-height:100svh}
+body.page-wrapper{display:flex;flex-direction:column}
+.page-header{position:relative!important;background:var(--academic-bg);box-shadow:none}
+.page-body{margin:0!important;flex:1}
+body a,body .academic-nav a,body .academic-prose a,body .page-footer a{
+ color:var(--academic-muted);text-decoration-line:underline;text-decoration-style:dotted;
+ text-decoration-color:var(--academic-underline);text-decoration-thickness:1px;text-underline-offset:4px
+}
+body a:hover{color:var(--academic-ink);text-decoration-color:var(--academic-muted)}
+a:focus-visible{outline:2px solid var(--academic-muted);outline-offset:5px;border-radius:2px}
+.academic-header{max-width:var(--academic-home);margin:0 auto;padding:0 28px}
+.academic-nav{min-height:94px;display:flex;justify-content:flex-end;align-items:center;border-bottom:1px solid var(--academic-line)}
+.academic-nav ul{display:flex;justify-content:flex-end;gap:32px;margin:0;padding:0;list-style:none}
+.academic-nav a{display:block;padding:9px 0;font-size:var(--text-small);font-weight:500;line-height:1.5}
+body .academic-nav a{text-decoration:none}
+body .academic-nav a[aria-current="page"]{color:var(--academic-ink)}
+.academic-skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--academic-bg);border:1px solid var(--academic-line);padding:8px 14px}
+.academic-skip:focus{top:12px}
+.academic-home{display:grid;grid-template-columns:245px minmax(0,1fr);gap:60px;width:100%;max-width:var(--academic-home);margin:0 auto;padding:66px 28px 96px;align-items:start}
+.academic-profile{position:sticky;top:38px;min-width:0}
+.profile-photo{display:block;width:112px;height:112px;border-radius:50%;object-fit:cover;margin:0 0 24px}
+.profile-placeholder{display:flex;align-items:center;justify-content:center;border:1px solid var(--academic-line);color:var(--academic-muted);font-size:var(--text-small);background:#f0eee8}
+.profile-name{display:flex;flex-direction:column;align-items:flex-start;gap:3px;overflow-wrap:anywhere;font-family:var(--academic-serif);font-size:var(--text-name);font-weight:500;line-height:1.4;letter-spacing:-.025em;margin:0 0 22px;color:var(--academic-ink)}
+.profile-native-name{font-family:"Xinlin Name Fangsong","FangSong","STFangsong","仿宋","Songti SC","Noto Serif CJK SC",serif;font-size:var(--text-name);font-weight:500;font-synthesis:weight;line-height:inherit;letter-spacing:.04em;white-space:nowrap;color:inherit}
+.profile-links{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.profile-contact-row{display:flex;align-items:baseline;gap:9px;min-width:0}
+.profile-contact-icon{flex:0 0 16px;width:16px;line-height:1;color:var(--academic-muted);align-self:center}
+.profile-contact-icon svg{display:block;width:16px;height:16px;fill:currentColor}
+.profile-contact-icon svg [fill="none"]{fill:none}
+.profile-link{font-size:var(--text-small);line-height:1.7;overflow-wrap:anywhere;min-width:0}
+.profile-email,.profile-link-pending{color:var(--academic-muted)}
+.academic-prose{min-width:0;font-size:var(--text-body);line-height:1.8;color:var(--academic-ink);font-family:var(--academic-sans)}
+.academic-prose p{margin:0 0 22px}
+/* Education entries are direct prose paragraphs; experience text is nested in components. */
+.about-page .academic-prose>p{margin-bottom:10px}
+.academic-prose h1,.academic-prose h2{font-family:var(--academic-serif);color:var(--academic-ink)}
+.academic-prose h1{font-size:var(--text-page);font-weight:500;line-height:1.3;letter-spacing:-.03em;margin:0 0 42px}
+.academic-prose h2{font-size:var(--text-section);line-height:1.4;font-weight:500;letter-spacing:-.015em;margin:var(--space-section) 0 23px}
+.home-prose>p:first-child{font-size:var(--text-body);line-height:1.8;margin-top:0;margin-bottom:0}
+.academic-prose>h1+h2{margin-top:0}
+.home-prose h2{margin-top:44px}
+.academic-prose strong{font-weight:600}
+.academic-prose em{font-style:italic}
+.academic-prose a{overflow-wrap:anywhere}
+body .about-page .academic-prose a{color:inherit}
+.academic-document{max-width:calc(var(--academic-document) + 56px);width:100%;padding:60px 28px 96px;margin:0 auto}
+.publications-page h2{margin-top:var(--space-section)}
+.publications-page h2#peer-reviewed-journal-articles{margin-bottom:8px}
+.publications-page .publication-title{font-family:var(--academic-sans);font-size:var(--text-entry);line-height:1.65;font-weight:600;margin:var(--space-entry) 0 10px;letter-spacing:0}
+.publications-page .publication-authors{font-size:var(--text-body);line-height:1.65;margin:0 0 6px}
+.publications-page .publication-authors+p{font-size:var(--text-body);line-height:1.65;color:var(--academic-muted);margin:0 0 7px}
+.publications-page .publication-authors+p+p{font-size:var(--text-body);line-height:1.65;margin:0}
+.publications-page .publication-legend{font-size:var(--text-body);color:var(--academic-muted);margin:0 0 24px;line-height:1.65}
+.author-marker{position:relative;top:-.42em;vertical-align:baseline;font-size:.72em;line-height:0;margin-left:.05em;font-weight:500}
+.research-lab{padding:0;margin:0 0 var(--space-lab)}
+.research-lab+.research-lab{padding-top:0}
+.academic-prose .lab-heading{font-family:var(--academic-sans);font-size:var(--text-body);line-height:1.8;letter-spacing:0;font-weight:600;margin:0 0 12px}
+.lab-institution{font:inherit;letter-spacing:inherit}
+.research-role{margin-top:var(--space-role)}
+.academic-prose .role-heading{font-family:var(--academic-sans);font-size:var(--text-body);font-weight:400;line-height:1.65;margin:0}
+.role-dates{font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+.role-title{font-weight:600}
+.role-details{margin:5px 0 0;font-size:var(--text-body);line-height:1.65}
+.research-line{display:flex;gap:5px;align-items:baseline;margin-top:3px}
+.research-line dt{font-weight:500;flex-shrink:0}
+.research-line dd{margin:0;min-width:0}
+.research-line dd p{margin:0}
+.page-footer{border-top:1px solid var(--academic-line);background:var(--academic-bg);padding:24px 24px 20px}
+.page-footer footer{max-width:var(--academic-home);margin:0 auto!important;color:var(--academic-muted);font-family:var(--academic-sans);font-size:var(--text-small);line-height:1.7}
+.page-footer footer p{margin-top:0;margin-bottom:7px;font-size:var(--text-small)}
+.page-footer [data-hbx="poweredby_cta"]{border:0;padding:0}
+@media(max-width:760px){
+ :root{--space-section:64px}
+ .academic-header{padding:0 24px}.academic-nav{min-height:78px}.academic-nav ul{gap:26px}
+ .academic-home{grid-template-columns:minmax(0,1fr);gap:34px;padding:36px 24px 64px;max-width:680px}
+ .academic-profile{position:static;display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:20px;row-gap:18px;align-items:center}
+ .profile-photo{width:84px;height:84px;margin:0;grid-column:1;grid-row:1}.profile-name{grid-column:2;margin:0}.profile-links{grid-column:1/-1;gap:7px}
+ .academic-document{padding:36px 24px 64px}.academic-prose h1{margin-bottom:32px}.academic-prose h2{margin-top:var(--space-section)}.home-prose h2{margin-top:40px}
+ .research-role{margin-top:18px}.research-line{display:block}.research-line dt,.research-line dd{display:inline}.research-line dt{margin-right:5px}
+ .page-footer{padding:22px 24px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}

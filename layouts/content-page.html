@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ if .IsHome }}
+<main id="main-content" class="academic-home" tabindex="-1">
+  {{ partial "academic/profile.html" . }}
+  <article class="academic-prose home-prose" aria-label="Introduction and research interests">
+    {{ partial "academic/body.html" . }}
+  </article>
+</main>
+{{ else }}
+<main id="main-content" class="academic-document{{ if eq .RelPermalink ("publications/" | relLangURL) }} publications-page{{ else }} about-page{{ end }}" tabindex="-1">
+  <article class="academic-prose">
+    {{ partial "academic/body.html" . }}
+  </article>
+</main>
+{{ end }}
+{{ end }}

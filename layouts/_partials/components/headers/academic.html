@@ -1,0 +1,10 @@
+<a class="academic-skip" href="#main-content">Skip to content</a>
+<header class="academic-header">
+  <nav class="academic-nav" aria-label="Primary navigation">
+    <ul>
+      {{ range site.Menus.main }}
+      <li><a href="{{ .URL | relLangURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

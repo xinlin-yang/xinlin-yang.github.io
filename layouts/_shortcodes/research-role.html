@@ -1,0 +1,7 @@
+<section class="research-role" aria-label="{{ .Get "title" }}">
+  <h4 class="role-heading"><span class="role-dates">{{ .Get "dates" }}</span> <span class="role-title">{{ .Get "title" }}</span></h4>
+  <dl class="role-details">
+    <div class="research-line"><dt>{{ .Get "advisor_label" | default "Advisor" }}:</dt><dd>{{ .Page.RenderString (dict "display" "inline") (.Get "advisors") }}</dd></div>
+    <div class="research-line"><dt>Research Topics:</dt><dd>{{ .Inner | .Page.RenderString }}</dd></div>
+  </dl>
+</section>

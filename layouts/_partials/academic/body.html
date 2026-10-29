@@ -1,0 +1,15 @@
+{{/* Render Markdown and retain publication author-marker and legend formatting. */}}
+{{ $html := .Content }}
+{{ if eq .RelPermalink ("publications/" | relLangURL) }}
+  {{ range findRE `(?s)<p>.*?</p>` $html }}
+    {{ $paragraph := . }}
+    {{ if in $paragraph "<strong>" }}
+      {{ $marked := replaceRE `([#*])` `<sup class="author-marker">${1}</sup>` $paragraph }}
+      {{ $marked = replace $marked "<p>" `<p class="publication-authors">` }}
+      {{ $html = replace $html $paragraph $marked }}
+    {{ else if in $paragraph "equally contributed;" }}
+      {{ $html = replace $html $paragraph (replace $paragraph "<p>" `<p class="publication-legend">`) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return ($html | safeHTML) }}

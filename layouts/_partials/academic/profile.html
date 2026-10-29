@@ -1,0 +1,35 @@
+{{ $profile := index hugo.Data.authors "me" }}
+<aside class="academic-profile" aria-label="Personal profile">
+  {{ $portrait := false }}
+  {{ with $profile.photo.path }}
+    {{ with resources.Get . }}
+      {{ $portrait = true }}
+      {{ $image := .Fill "224x224 Center webp" }}
+      <img class="profile-photo" src="{{ $image.RelPermalink }}" width="112" height="112" alt="{{ $profile.photo.alt }}" decoding="async">
+    {{ else }}
+      {{ warnf "Profile portrait not found in assets/: %s" . }}
+    {{ end }}
+  {{ end }}
+  {{ if not $portrait }}<div class="profile-photo profile-placeholder" role="img" aria-label="Portrait placeholder">Photo</div>{{ end }}
+  {{ $name := $profile.name.display }}
+  {{ if hasPrefix $name "[Placeholder:" }}{{ $name = "Your Name" }}{{ end }}
+  <h1 class="profile-name"><span lang="en">{{ $name }}</span>{{ with $profile.name.alternate }}<span class="profile-native-name" lang="zh-Hans">{{ . }}</span>{{ end }}</h1>
+  <div class="profile-links">
+    {{ range $profile.links }}
+      {{ $is_email := or (eq .icon "at-symbol") (hasPrefix (.url | default "") "mailto:") }}
+      {{ $icon_name := .icon }}
+      {{ if $is_email }}{{ $icon_name = "hero/envelope" }}{{ end }}
+      <div class="profile-contact-row{{ if $is_email }} profile-email-row{{ end }}">
+        <span class="profile-contact-icon" aria-hidden="true">{{ partial "functions/get_icon" (dict "name" $icon_name "Page" $) }}</span>
+        {{ if $is_email }}
+          {{/* The owner-supplied label is literal text: never decode, reconstruct, or link email. */}}
+          <span class="profile-link profile-email">{{ .label }}</span>
+        {{ else if .url }}
+          <a class="profile-link" href="{{ .url }}">{{ .label }}</a>
+        {{ else }}
+          <span class="profile-link profile-link-pending">{{ .label }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</aside>
