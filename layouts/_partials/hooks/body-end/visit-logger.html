@@ -1,0 +1,12 @@
+{{- $logger := hugo.Data.visit_logger | default dict -}}
+{{- $pages := slice "/" "/publications/" "/about/" -}}
+{{- if and $logger.enabled (not hugo.IsServer) (eq hugo.Environment "production") (in $pages .RelPermalink) -}}
+  {{- if ne site.BaseURL $logger.site_url -}}
+    {{- errorf "Visit logger: production baseURL must match site_url." -}}
+  {{- else if ne $logger.worker_url "https://lark-visit-notifier.yangxinlin20000611.workers.dev/collect" -}}
+    {{- errorf "Visit logger: unexpected collection endpoint." -}}
+  {{- else -}}
+    {{- $script := resources.Get "js/visit-logger.js" | fingerprint -}}
+    <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" data-visit-logger data-endpoint="{{ $logger.worker_url }}" data-site-origin="{{ strings.TrimSuffix "/" $logger.site_url }}"></script>
+  {{- end -}}
+{{- end -}}

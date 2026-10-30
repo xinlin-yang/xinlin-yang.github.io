@@ -3,8 +3,8 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/
 
 title: 'Xinlin Yang'
-# Confirmed expected user-site URL; repository and GitHub Pages are not created or deployed yet.
-baseURL: 'https://xinlin-yang.github.io/'
+# Canonical production domain.
+baseURL: 'https://xinlinyang.com/'
 
 ############################
 ## LANGUAGE

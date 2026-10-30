@@ -1,0 +1,4 @@
+# Enable only after the hardened Worker and rate-limit bindings are deployed.
+enabled: true
+site_url: 'https://xinlinyang.com/'
+worker_url: 'https://lark-visit-notifier.yangxinlin20000611.workers.dev/collect'
