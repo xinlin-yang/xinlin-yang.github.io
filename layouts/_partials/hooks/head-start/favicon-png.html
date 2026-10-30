@@ -1,0 +1,8 @@
+{{/* PNG fallback before the theme's SVG declaration for older Safari.
+     Only add it when SVG is selected; PNG-only sites already get a theme icon. */}}
+{{- with resources.Get "media/icon.svg" -}}
+  {{- with resources.Get "media/icon.png" -}}
+    {{- $fallback := .Fill "32x32 Center" -}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $fallback.RelPermalink }}" />
+  {{- end -}}
+{{- end -}}
