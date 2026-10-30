@@ -38,4 +38,6 @@ Huang, M., **Yang, X.**, Yang, G., Shen, L., Hu, Z., Wang, Y.\*, Jiang, Y.
 
 **Yang, X.**, Huang, M., Jiang, Y., Wang, Y.\*
 
-2026\. *Annual Conference on General and Experimental Psychology, Chinese Psychological Society*. [Poster presentation](/files/poster/poster_20260530.pdf).
+2026\. *Annual Conference on General and Experimental Psychology, Chinese Psychological Society*.
+
+[Poster presentation](/files/poster/poster_20260530.pdf)
