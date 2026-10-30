@@ -1,4 +1,0 @@
-# Independent analytics switch; enabled for matching production builds only.
-# Owner confirmed backend settings; these are not controlled by this file.
-enabled: true
-site_url: 'https://xinlinyang.com/'
