@@ -89,8 +89,8 @@ cascade:
 ############################
 
 outputs:
-  home: [HTML, RSS, backlinks]
-  section: [HTML, RSS]
+  home: [HTML, backlinks]
+  section: [HTML]
 
 ############################
 ## ADVANCED
@@ -107,7 +107,7 @@ enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
 ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: true
-disableKinds: [taxonomy, term] # No public taxonomy archives are used by the three-page site.
+disableKinds: [taxonomy, term, sitemap, rss] # Keep HTML pages; do not publish search/feed discovery outputs.
 imaging:
   resampleFilter: lanczos
   quality: 90
