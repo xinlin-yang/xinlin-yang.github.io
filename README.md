@@ -1,2 +1,1 @@
-# xinlin-yang.github.io
-personal academic website
+personal academic website source code
