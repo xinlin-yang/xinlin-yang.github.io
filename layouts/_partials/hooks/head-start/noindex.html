@@ -1,0 +1,4 @@
+{{/* Blox already emits noindex for private pages; avoid a duplicate. */}}
+{{- if not .Params.private -}}
+<meta name="robots" content="noindex">
+{{- end -}}
