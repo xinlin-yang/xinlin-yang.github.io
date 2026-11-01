@@ -20,9 +20,12 @@ links:
   - icon: at-symbol
     label: xinlin-yang[at]outlook[dot]com
     url: ''
-  - icon: academicons/google-scholar
+  - icon: local/cap-rounded
     label: Google Scholar
     url: 'https://scholar.google.com/citations?hl=en&user=fWmX4iQAAAAJ'
   - icon: academicons/orcid
     label: ORCID
     url: 'https://orcid.org/0009-0008-6647-6542'
+  - icon: local/file-text
+    label: CV
+    url: 'https://drive.google.com/file/d/1H9WcmB2dRC0-WFellEKm5lfaWkdbkO2s/view?usp=drive_link'
