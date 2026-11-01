@@ -18,7 +18,7 @@
     {{ range $profile.links }}
       {{ $is_email := or (eq .icon "at-symbol") (hasPrefix (.url | default "") "mailto:") }}
       {{ $icon_name := .icon }}
-      {{ if $is_email }}{{ $icon_name = "hero/envelope" }}{{ end }}
+      {{ if $is_email }}{{ $icon_name = "local/envelope" }}{{ end }}
       <div class="profile-contact-row{{ if $is_email }} profile-email-row{{ end }}">
         <span class="profile-contact-icon" aria-hidden="true">{{ partial "functions/get_icon" (dict "name" $icon_name "Page" $) }}</span>
         {{ if $is_email }}
