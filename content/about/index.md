@@ -32,7 +32,7 @@ animacy perception, biological motion, motion analysis, naturalistic stimuli
 
 {{< research-lab name="Memory and Emotion Lab" institution="Sun Yat-sen University" url="https://sysumelab.com/" >}}
 
-{{< research-role title="Undergraduate Research Assistant" dates="03/2021–06/2023" advisors="Prof. [Yixuan Ku](https://www.researchgate.net/profile/Yixuan-Ku)" >}}
+{{< research-role title="Undergraduate Student Researcher" dates="03/2021–06/2023" advisors="Prof. [Yixuan Ku](https://www.researchgate.net/profile/Yixuan-Ku)" >}}
 visual working memory, free recall, long-term memory, serial dependence
 {{< /research-role >}}
 
