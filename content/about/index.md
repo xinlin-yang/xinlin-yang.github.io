@@ -8,7 +8,7 @@ summary: 'Education and Research Experiences of Xinlin Yang.'
 
 ## Education
 
-2023–2026, M.S. in Cognitive Neuroscience, Institute of Psychology, Chinese Academy of Sciences
+2023–2026, M.S. in Cognitive Neuroscience, University of Chinese Academy of Sciences
 
 2018–2023, B.S. in Psychology, Sun Yat-sen University
 
